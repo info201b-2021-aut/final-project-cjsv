@@ -12,7 +12,7 @@ Our domain of interest is the environment and biodiversity. We are interested in
 
 The three data driven projects that we found are:
 [Biodiversity Conservation in the Amazon](https://biodiversitylinks.org/projects/mission-projects/biodiversity-conservation-program-in-the-amazon)
-[Reduces Opportunities for Unlawful Transport of Endangered Species (ROUTES)](https://biodiversitylinks.org/projects/current-global-projects/routes)
+[Reduce Opportunities for Unlawful Transport of Endangered Species (ROUTES)](https://biodiversitylinks.org/projects/current-global-projects/routes)
 [Targeting Natural Resource Corruption (TNRC)](https://biodiversitylinks.org/projects/current-global-projects/routes)
 
 Questions we want to answer about the domain:
