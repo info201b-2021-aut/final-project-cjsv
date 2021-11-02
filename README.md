@@ -5,8 +5,8 @@
 Our domain of interest is biodiversity. We are interested in this domain because biodiversity is an indicator of the effects of climate change. 
 
 Other examples of data driven projects related to this domain are:
-- [Biodiversity Conservation in the Amazon](https://biodiversitylinks.org/projects/mission-projects/biodiversity-conservation-program-in-the-amazon),
-- [Reduce Opportunities for Unlawful Transport of Endangered Species (ROUTES)](https://biodiversitylinks.org/projects/current-global-projects/routes),
+- [Biodiversity Conservation in the Amazon](https://biodiversitylinks.org/projects/mission-projects/biodiversity-conservation-program-in-the-amazon)
+- [Reduce Opportunities for Unlawful Transport of Endangered Species (ROUTES)](https://biodiversitylinks.org/projects/current-global-projects/routes)
 - [Targeting Natural Resource Corruption (TNRC)](https://biodiversitylinks.org/projects/current-global-projects/routes)
 
 The data-driven questions we hope to answer about this domain are:
