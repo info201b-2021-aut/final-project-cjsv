@@ -2,7 +2,7 @@
 
 ## Domain of interest
 
-Our domain of interest is biodiversity. We are interested in this domain because biodiversity is an indicator of the effects of climate change. 
+Our domain of interest is biodiversity. We are interested in this domain because we all share a passion and love for plants and animals.
 
 Other examples of data driven projects related to this domain are:
 - [Biodiversity Conservation in the Amazon](https://biodiversitylinks.org/projects/mission-projects/biodiversity-conservation-program-in-the-amazon)
