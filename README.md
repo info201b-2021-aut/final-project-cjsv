@@ -24,9 +24,9 @@ How many features (columns) are in the data?
 What questions (from above) can be answered using the data in this dataset?
 
 - [Biodiversity in National Parks](https://www.kaggle.com/nationalparkservice/park-biodiversity)
-  - Downloaded from [](https://www.kaggle.com/nationalparkservice/park-biodiversity)
+  - Downloaded from [Kaggle - Biodiversity in National Parks](https://www.kaggle.com/nationalparkservice/park-biodiversity)
   - The National Park Service species list database is managed and updated by staff at individual national parks and the systemwide Inventory and Monitoring department.
-  - There are
-  - There are 
-  - Question
+  - There are 119248 rows containing unique species. 
+  - There are 13 columns containing information about each row. 
+  - This dataset can be used to answer all the questions from above. 
 
