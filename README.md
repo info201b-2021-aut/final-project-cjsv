@@ -2,7 +2,7 @@
 
 ## Domain of interest
 
-Our domain of interest is biodiversity conservation. We are interested in this domain because we humans are exceeding the one of nine planetary boundaries --biosphere integrity especially genetic biodiversity. It is urgent for us to find as much as information, andlyze it, and develop solutions to prevent genetic diversity from further reducing and help mitigate the negative impacts. 
+Our domain of interest is biodiversity conservation. We are interested in this domain because we humans are exceeding the one of nine planetary boundaries --biosphere integrity especially genetic biodiversity. It is urgent for us to find as much as information, analyze it, and develop solutions to prevent biodiversity from further reducing and help mitigate the negative impacts. 
 
 Other examples of data driven projects related to this domain are:
 - [Biodiversity Conservation in the Amazon](https://biodiversitylinks.org/projects/mission-projects/biodiversity-conservation-program-in-the-amazon)
