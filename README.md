@@ -49,4 +49,4 @@ What questions (from above) can be answered using the data in this dataset?
   - The data was collected by California Department of Fish and Wildlife, who used Areas of Conservation Emphasis (ACE) to compile and analyze the best available statewide spatial information in California on biodiversity, rarity and endemism, harvested species, significant habitats, connectivity and wildlife movement, climate vulnerability, climate refugia, and other relevant data. 
   - There are 4473 rows. 
   - There are 7 columns.
-  - This dataset can be used to answer the second question about which speicific area in California is more biodiversed and which is less.
+  - This dataset can be used to answer question 2, specifically which area in California is more biodiversed and which is less.
