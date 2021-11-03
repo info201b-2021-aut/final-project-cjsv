@@ -10,7 +10,7 @@ Other examples of data driven projects related to this domain are:
 - [Targeting Natural Resource Corruption (TNRC)](https://biodiversitylinks.org/projects/current-global-projects/routes)
 
 The data-driven questions we hope to answer about this domain are:
-- What is the biodiversity trend over the last decade?
+- What is the status of invasive species in different regions? 
 - Which areas are the most biodiverse and which areas are the least biodiverse?
 - How many species have disappeared from certain areas over the last decade?
 
