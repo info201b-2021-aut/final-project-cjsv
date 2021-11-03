@@ -43,3 +43,10 @@ What questions (from above) can be answered using the data in this dataset?
   - There are 814692 rows.
   - There are 11 columns.
   - This data set can be used to answer all the questions from above.
+
+- [Native Fish Species](https://catalog.data.gov/dataset/native-fish-richness-ace-ds2744)
+  - Downloaded from [data.gov](https://www.data.gov/)
+  - The data was collected by California Department of Fish and Wildlife.
+  - There are 4473 rows containing the specific places in California with the corresponding number of native fish and statistics regarding land area and shape. 
+  - There are 7 columns.
+  - This dataset can be used to answer the second question about which speicific area in California is more biodiversed and which is less.
