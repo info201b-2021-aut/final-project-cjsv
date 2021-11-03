@@ -46,7 +46,7 @@ What questions (from above) can be answered using the data in this dataset?
 
 - [Native Fish Species](https://catalog.data.gov/dataset/native-fish-richness-ace-ds2744)
   - Downloaded from [Data.gov](https://www.data.gov/)
-  - The data was collected by California Department of Fish and Wildlife.
+  - The data was collected by California Department of Fish and Wildlife, who used Areas of Conservation Emphasis (ACE) to compile and analyze the best available statewide spatial information in California on biodiversity, rarity and endemism, harvested species, significant habitats, connectivity and wildlife movement, climate vulnerability, climate refugia, and other relevant data. 
   - There are 4473 rows. 
   - There are 7 columns.
   - This dataset can be used to answer the second question about which speicific area in California is more biodiversed and which is less.
