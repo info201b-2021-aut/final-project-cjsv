@@ -24,14 +24,14 @@ How many features (columns) are in the data?
 What questions (from above) can be answered using the data in this dataset?
 
 - [Biodiversity in National Parks](https://www.kaggle.com/nationalparkservice/park-biodiversity)
-  - Downloaded from [Kaggle - Biodiversity in National Parks](https://www.kaggle.com/nationalparkservice/park-biodiversity)
+  - Downloaded from [Kaggle](https://www.kaggle.com/)
   - The National Park Service species list database is managed and updated by staff at individual national parks and the systemwide Inventory and Monitoring department.
   - There are 119248 rows.
   - There are 13 columns.
   - This dataset can be used to answer all the questions from above. 
 
 - [State of India's Birds 2020](https://www.kaggle.com/usharengaraju/state-of-indias-birds-2020)
-  - Downloaded from [Kaggle - State of India's Birds 2020](https://www.kaggle.com/usharengaraju/state-of-indias-birds-2020)
+  - Downloaded from [Kaggle](https://www.kaggle.com/)
   - This report was created by a partnership of ten organizations concerned with biodiversity and convservation using data from more than 15,500 bird watchers. It tracks the conservation status of multiple bird species across India. 
   - There are 867 rows. 
   - There are 19 columns. 
@@ -43,10 +43,3 @@ What questions (from above) can be answered using the data in this dataset?
   - There are 814692 rows.
   - There are 11 columns.
   - This data set can be used to answer all the questions from above.
-
-- [Native Fish Species](https://catalog.data.gov/dataset/native-fish-richness-ace-ds2744)
-  - Downloaded from [data.gov](https://www.data.gov/)
-  - The data was collected by California Department of Fish and Wildlife.
-  - There are 4473 rows containing the specific places in California with the corresponding number of native fish and statistics regarding land area and shape. 
-  - There are 7 columns.
-  - This dataset can be used to answer the second question about which speicific area in California is more biodiversed and which is less.
