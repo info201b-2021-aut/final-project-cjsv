@@ -48,6 +48,6 @@ final_table <- subset(final_table, select = -c(endangered_total, threatened_tota
 #Function
 aggregate_table <- function(df) {
   species <- df
-  mapply(format, final_table, justify=c("left", "centre", "centre")) 
+  mapply(format, final_table, justify=c("left", "right", "right")) 
 }
 
