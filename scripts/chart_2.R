@@ -2,6 +2,7 @@ library(tidyverse)
 library(ggplot2)
 library(patchwork)
 
+chart_2 {
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 
@@ -24,7 +25,7 @@ label_data$angle <- ifelse(angle < -90, angle+180, angle)
 
 label_data$state <- paste(label_data$state, " (", label_data$species_amount, ")", sep="")
 
-chart_2 <- ggplot(unique_species, aes(x = as.factor(id), y = species_amount))+
+return(ggplot(unique_species, aes(x = as.factor(id), y = species_amount))+
   geom_bar(stat="identity", fill=alpha("blue", 0.3))+
   ylim(-100, 530)+
   theme_minimal()+
@@ -39,4 +40,5 @@ chart_2 <- ggplot(unique_species, aes(x = as.factor(id), y = species_amount))+
             fontface = "bold", alpha = 0.6, size = 2.5, angle = label_data$angle, inherit.aes = FALSE)+
   geom_text(aes(x=27.5, y=530, label = "Biodiversity in National Parks Across the States by Number of Unique Orders"), 
             color = "black", inherit.aes = FALSE)
-
+)
+}
