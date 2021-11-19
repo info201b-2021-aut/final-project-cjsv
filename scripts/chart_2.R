@@ -4,6 +4,7 @@ library(patchwork)
 
 chart_2 <- function(parks, species) {
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 
 states <- merge(x = parks, y = species, all.x = TRUE)
@@ -27,7 +28,7 @@ label_data$state <- paste(label_data$state, " (", label_data$species_amount, ")"
 
 return(ggplot(unique_species, aes(x = as.factor(id), y = species_amount))+
   geom_bar(stat="identity", fill=alpha("blue", 0.3))+
-  ylim(-100, 530)+
+  ylim(-100, 700)+
   theme_minimal()+
   theme(
     axis.text = element_blank(),
@@ -38,7 +39,7 @@ return(ggplot(unique_species, aes(x = as.factor(id), y = species_amount))+
   coord_polar(start = 0) +
   geom_text(data = label_data, aes(x=id, y=species_amount+10, label = state, hjust = hjust), color = "black", 
             fontface = "bold", alpha = 0.6, size = 2.5, angle = label_data$angle, inherit.aes = FALSE)+
-  geom_text(aes(x=27.5, y=530, label = "Biodiversity in National Parks Across the States by Number of Unique Orders"), 
+  geom_text(aes(x=27.5, y=600, label = "Biodiversity in National Parks Across the States by Number of Unique Orders"), 
             color = "black", inherit.aes = FALSE)
 )
 }
