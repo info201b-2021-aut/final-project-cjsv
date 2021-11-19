@@ -2,7 +2,8 @@ library(tidyverse)
 library(ggplot2)
 library(patchwork)
 
-parks <- read.csv("C:/Users/toric/Documents/info201/final-project-cjsv/scripts/data/national_parks_biodiversity/parks.csv")
-species <- read.csv("C:/Users/toric/Documents/info201/final-project-cjsv/scripts/data/national_parks_biodiversity/species.csv")
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 
-#test
+states <- merge(x = parks, y = species, all.x = TRUE)
+unique_species <- num(unique(states$order))
