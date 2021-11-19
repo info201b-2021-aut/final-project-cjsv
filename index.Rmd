@@ -1,0 +1,43 @@
+---
+title: "Biodiversity in National Parks"
+author: "Cindy Te, Jessica Zhang, Shirley Yao, Victoria Limwanich"
+date: "11/19/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+source("scripts/summary_info.R")
+source("scripts/aggregate_table.R")
+```
+
+## Introduction
+The purpose and importance of this project is to learn more about the trends of biodiversity. As humans are quickly exceeding one of the nine planetary boundaries, biosphere integrity (especially genetic biodiversity), it is urgent for us find information, analyze it, and understand the trends of biodiversity to develop solutions to prevent biodiversity from further reducing and to help mitigate its negative impacts.
+
+## Summary Information
+
+In a study containing `r get_summary_info(read.csv("scripts/data/national_parks_biodiversity/species.csv"))["total_species"]` species across 
+`r get_summary_info(read.csv("scripts/data/national_parks_biodiversity/species.csv"))["total_parks"]` national parks, 
+there are `r get_summary_info(read.csv("scripts/data/national_parks_biodiversity/species.csv"))["total_categories"]` different categories of species
+that contain a total of `r get_summary_info(read.csv("scripts/data/national_parks_biodiversity/species.csv"))["total_species_type"]` different types of species.
+Of these species, there are a total of `r get_summary_info(read.csv("scripts/data/national_parks_biodiversity/species.csv"))["total_rare"]` rare species, 
+`r get_summary_info(read.csv("scripts/data/national_parks_biodiversity/species.csv"))["total_endangered"]` of which are endangered species.
+
+## Aggregate Table
+
+This table groups the national parks to summarize the total number of species by category in each park, and then summarize how many of those species are endangered.
+
+The table shows that Petrified Forest National Park has the highest proportion of species that are of concern, threatened, or endangered.
+
+```{r echo = FALSE}
+kable(aggregate_table(read.csv("scripts/data/national_parks_biodiversity/species.csv")), col.names = c(
+  "Park",
+  "Total of Species",
+  "Percent of Species of Concern, Threatened, or Endangered"
+))
+```
+
+
+
+
