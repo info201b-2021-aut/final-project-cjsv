@@ -1,7 +1,7 @@
 library(tidyverse)
 library("dplyr")
 library(ggplot2)
-library(knitr)
+
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
