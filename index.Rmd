@@ -10,8 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 source("scripts/summary_info.R")
 source("scripts/aggregate_table.R")
-source("scripts/chart_2.R")
 source("scripts/chart_1.R")
+source("scripts/chart_2.R")
 ```
 
 ## Introduction
