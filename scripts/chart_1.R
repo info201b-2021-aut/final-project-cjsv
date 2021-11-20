@@ -23,6 +23,7 @@ chart_1 <- function(parks, species){
   mutate(native_species_prop = native_sum / species_sum)
   
   return(ggplot(data = species_state_table) +
-  geom_col(mapping = aes(x = state, y = native_species_prop))
+  geom_col(mapping = aes(x = state, y = native_species_prop)) +
+    labs(title = "Percentage of Native Species by State")
   )
 }
