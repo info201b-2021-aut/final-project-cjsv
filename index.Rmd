@@ -43,7 +43,7 @@ kable(aggregate_table(read.csv("scripts/data/national_parks_biodiversity/species
 ```{r echo = FALSE}
 chart_1(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv"))
 ```
-This bar chart shows percentage of native species in different national parks. It offers a quick overview of the percentage of native species by state. 
+<br> This bar chart shows percentage of native species in different national parks. It offers a quick overview of the percentage of native species by state. 
 This chart was created by grouping the parks by state and finding the number of species that are native to the state. That number was then divided by the total number of species found in the state and multiplied by 100 to find the percentage. The states are listed in alphabetical order. Right away, we can see that some states like Arizona, Utah, and New Mexico have percentages above 75. Meanwhile, Nevada and Oregon have a native species percentage below 50%. As invasive species are detrimental ecosystems, this gives us some insight into state of national parks. 
 
 ## Chart 2
