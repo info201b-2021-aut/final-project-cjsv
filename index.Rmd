@@ -28,8 +28,8 @@ Of these species, there are a total of `r get_summary_info(read.csv("scripts/dat
 
 ## Aggregate Table
 
-This table groups each national parks' observations together to summarize the total number of species in each park, and then calculate the percentage of species that are of concern, threatened, or endangered.
-The table shows that Petrified Forest National Park has the highest percentage (9.26%) of species that are of concern, threatened, or endangered, while Gates Of The Arctic National Park and Preserve has the lowest percentage (1.55%) of species that are of concern, threatened, or endangered.
+The table groups each national parks' observations together to summarize the total number of species in each park, and then calculate the percentage of species that are of concern, threatened, or endangered.
+The table shows that Petrified Forest National Park has the highest percentage (9.26%) of species that are of concern, threatened, or endangered, while Gates Of The Arctic National Park and Preserve has the lowest percentage (1.55%) of species that are of concern, threatened, or endangered. This gives insight on what national parks are at a higher risk of biodiversity loss.
 
 ```{r echo = FALSE}
 kable(aggregate_table(read.csv("scripts/data/national_parks_biodiversity/species.csv")), col.names = c(
