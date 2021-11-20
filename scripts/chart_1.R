@@ -29,3 +29,5 @@ chart_1 <- function(parks, species){
                 y = "Percentage of Native Species")
            )
 }
+
+knitr::chart_1
