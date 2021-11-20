@@ -28,7 +28,7 @@ Of these species, there are a total of `r get_summary_info(read.csv("scripts/dat
 
 ## Aggregate Table
 
-This table groups the national parks observations together to summarize the total number of species by category in each park, and then calculate the percentage of species that are of concern, threatened, or endangered.
+This table groups each national parks' observations together to summarize the total number of species in each park, and then calculate the percentage of species that are of concern, threatened, or endangered.
 The table shows that Petrified Forest National Park has the highest percentage (9.26%) of species that are of concern, threatened, or endangered, while Gates Of The Arctic National Park and Preserve has the lowest percentage (1.55%) of species that are of concern, threatened, or endangered.
 
 ```{r echo = FALSE}
@@ -43,7 +43,7 @@ kable(aggregate_table(read.csv("scripts/data/national_parks_biodiversity/species
 ```{r echo = FALSE}
 chart_1(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv"))
 ```
-This bar chart shows percentage of native species in different national parks. It offers a quick overview of the percentage of native species by state. 
+<br> This bar chart shows the percentage of native species in different national parks. It offers a quick overview of the percentage of native species by state. 
 This chart was created by grouping the parks by state and finding the number of species that are native to the state. That number was then divided by the total number of species found in the state and multiplied by 100 to find the percentage. The states are listed in alphabetical order. Right away, we can see that some states like Arizona, Utah, and New Mexico have percentages above 75. Meanwhile, Nevada and Oregon have a native species percentage below 50%. As invasive species are detrimental ecosystems, this gives us some insight into state of national parks. 
 
 ## Chart 2
