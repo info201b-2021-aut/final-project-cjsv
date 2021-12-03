@@ -32,7 +32,7 @@ final_table <- left_join(second_joined_table, concerned_table)
 # Adding sum  of endangered, threatened, or species of concern 
 final_table <- mutate(final_table, etc_total = endangered_total + threatened_total + concerned_total)
 
-# Percent fucntion
+# Percent function
 percent <- function(x, digits = 2, format = "f", ...) {      
   paste0(formatC(x * 100, format = format, digits = digits, ...), "%")
 }
