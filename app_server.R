@@ -14,17 +14,17 @@ source("scripts/chart_3.R")
 # Start shinyServer
 server <- function(input, output) {
   
-  # Render a plotly object that returns an interactive map
+  # Render a plotly object that returns a barchart
   output$barchart <- renderPlotly({
     return(chart_1(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
   })
   
-  # Render a plotly object that returns a bar chart
+  # Render a plotly object that returns a chart
   output$chart <- renderPlotly({
     return(chart_2(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
   })
   
-  # Render a plotly object that returns a line chart
+  # Render a plotly object that returns a scatterplot
   output$scatterplot <- renderPlotly({
     return(chart_3(read.csv("scripts/data/national_parks_biodiversity/species.csv")))
   })
