@@ -1,7 +1,7 @@
 library(tidyverse)
 library("dplyr")
 library(ggplot2)
-
+library(patchwork)
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
@@ -9,11 +9,15 @@ species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stri
 chart_1 <- function(parks, species){
   speciesandparks <- left_join(species, parks, by = "park_name")
   
-  num_native_species <- speciesandparks %>%
+  species_by_state <- speciesandparks %>%
   group_by(state) %>%
-  summarise(native_sum = sum(nativeness == "Native"))
+  filter(scientific_name == unique(scientific_name))
   
-  num_species_state <- speciesandparks %>%
+  num_native_species <- species_by_state %>%
+  group_by(state) %>%
+  summarise(native_sum = sum((nativeness == "Native")))
+  
+  num_species_state <- species_by_state %>%
   group_by(state) %>%
   summarise(species_sum = length(nativeness))
   
