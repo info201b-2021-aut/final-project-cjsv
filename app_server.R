@@ -16,17 +16,17 @@ server <- function(input, output) {
   
   # Render a plotly object that returns a barchart
   output$barchart <- renderPlotly({
-    return(chart_1(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
+    chart_1
   })
   
   # Render a plotly object that returns a chart
   output$chart <- renderPlotly({
-    return(chart_2(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
+    chart_2
   })
   
   # Render a plotly object that returns a scatterplot
   output$scatterplot <- renderPlotly({
-    return(chart_3(read.csv("scripts/data/national_parks_biodiversity/species.csv")))
+    chart_3
   })
 }
 

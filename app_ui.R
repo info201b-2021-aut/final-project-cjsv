@@ -62,7 +62,7 @@ page_three <- tabPanel(
 conclusion <- tabPanel(
   "Conclusion",
   mainPanel(
-    h1("Introduction"),
+    h1("Conclusion"),
     p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
