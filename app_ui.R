@@ -49,15 +49,25 @@ page_three <- tabPanel(
   "Chart 3",
   
   sidebarLayout(
-    sidebarPanel(),
-    
-    mainPanel(
+    sidebarPanel(
+      species_input <- sliderInput(
+        inputId = "species_status",
+        label = "Species Status",
+        choices = c("Endangered Species" = "endangered_total", 
+        "Species of Concern" = "concern_total", 
+         "Threatened Species" = "threatened_total")
+      )
+      )
+  ),
+  
+  mainPanel(
+    ui <- fluidPage(
       # Display graph
       plotlyOutput("scatterplot")
     )
-    
   )
 )
+
 
 conclusion <- tabPanel(
   "Conclusion",
