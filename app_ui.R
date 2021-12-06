@@ -50,23 +50,26 @@ page_three <- tabPanel(
   
   sidebarLayout(
     sidebarPanel(
-      species_input <- sliderInput(
-        inputId = "species_status",
-        label = "Species Status",
-        choices = c("Endangered Species" = "endangered_total", 
-        "Species of Concern" = "concern_total", 
-         "Threatened Species" = "threatened_total")
+        
+      status_input <- selectInput(
+        inputId = "status",
+        label = "Select a species status:",
+        choices = list(
+          "Endangered Species" = "endangered_total",
+          "Species of Concern" = "concern_total", 
+          "Threatened Species" = "threatened_total"
+        ),
+        selected = "endangered_total"
       )
+    ),
+      
+    mainPanel(
+      ui <- fluidPage(
+        plotlyOutput("scatterplot"),
       )
-  ),
-  
-  mainPanel(
-    ui <- fluidPage(
-      # Display graph
-      plotlyOutput("scatterplot")
-    )
-  )
-)
+    ),
+   )
+)  
 
 
 conclusion <- tabPanel(
@@ -85,6 +88,7 @@ conclusion <- tabPanel(
 
 ui <- navbarPage(
   "Biodiversity Data Exploration",
+  theme = "styles.css",
   intro,
   page_one,
   page_two,
