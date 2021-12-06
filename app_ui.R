@@ -22,12 +22,12 @@ page_one <- tabPanel(
   
   sidebarLayout(
     sidebarPanel(),
-  
-  mainPanel(
+    
+    mainPanel(
       # Display graph
-    plotlyOutput("barchart")
+      plotlyOutput("barchart")
     )
-
+    
   )
 )
 
@@ -50,9 +50,9 @@ page_three <- tabPanel(
   
   sidebarLayout(
     sidebarPanel(
-        
+      
       status_input <- selectInput(
-        inputId = "status",
+        inputId = "conservation",
         label = "Select a species status:",
         choices = list(
           "Endangered Species" = "endangered_total",
@@ -62,13 +62,13 @@ page_three <- tabPanel(
         selected = "endangered_total"
       )
     ),
-      
+    
     mainPanel(
       ui <- fluidPage(
         plotlyOutput("scatterplot"),
       )
     ),
-   )
+  )
 )  
 
 

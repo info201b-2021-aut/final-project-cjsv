@@ -5,7 +5,7 @@ library(plotly)
 
 source("scripts/chart_1.R")
 source("scripts/chart_2.R")
-source("scripts/chart_3.R")
+#source("scripts/chart_3.R")
 
 server <- function(input, output) {
   
@@ -20,8 +20,8 @@ server <- function(input, output) {
   })
   
   # Render a plotly object that returns a scatterplot
-  output$scatterplot <- renderPlotly({
-    chart_3
-  })
+  #output$scatterplot <- renderPlotly({
+  #  chart_3
+  #})
 }
 
