@@ -56,8 +56,8 @@ page_three <- tabPanel(
         label = "Select a species status:",
         choices = list(
           "Endangered Species" = "endangered_total",
-          "Species of Concern" = "concerned_total", 
-          "Threatened Species" = "threatened_total"
+          "Threatened Species" = "threatened_total",
+          "Species of Concern" = "concerned_total"
         ),
         selected = "endangered_total"
       )
@@ -65,12 +65,37 @@ page_three <- tabPanel(
     
     mainPanel(
       ui <- fluidPage(
-        plotlyOutput("scatterplot"),
+        plotlyOutput("scatterplot")
       )
     ),
   )
 )  
 
+page_four <- tabPanel(
+  "Chart 4",
+  
+  sidebarLayout(
+    sidebarPanel(
+      
+      status_input <- selectInput(
+        inputId = "status",
+        label = "Select a species status:",
+        choices = list(
+          "Endangered Species" = "endangered",
+          "Threatened Species" = "threatened",
+          "Species of Concern" = "concerned"
+        ),
+        selected = "endangered"
+      )
+    ),
+    
+    mainPanel(
+      ui <- fluidPage(
+        plotlyOutput("map")
+      )
+    ),
+  )
+)  
 
 conclusion <- tabPanel(
   "Conclusion",
@@ -93,5 +118,6 @@ ui <- navbarPage(
   page_one,
   page_two,
   page_three,
+  page_four,
   conclusion
 )

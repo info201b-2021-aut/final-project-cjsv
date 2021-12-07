@@ -17,7 +17,7 @@ species_data <- species %>%
   )
 
 #create a scatterplot of the endangered species number of each national park
-chart_3 <- function (conservation_input){
+chart_3 <- function(conservation_input){
   graph <- ggplot(data = species_data, aes(x = park_name)) +
     geom_point(aes_string(y = conservation_input)) +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
