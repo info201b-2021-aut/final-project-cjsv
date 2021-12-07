@@ -1,7 +1,8 @@
-library("dplyr")
+library(dplyr)
 library(tidyverse)
 library(ggplot2)
 library(patchwork)
+library(shiny)
 
 park <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)

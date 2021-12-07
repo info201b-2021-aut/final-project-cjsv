@@ -51,12 +51,12 @@ page_three <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       
-      status_input <- selectInput(
+      conservation_input <- selectInput(
         inputId = "conservation",
         label = "Select a species status:",
         choices = list(
           "Endangered Species" = "endangered_total",
-          "Species of Concern" = "concern_total", 
+          "Species of Concern" = "concerned_total", 
           "Threatened Species" = "threatened_total"
         ),
         selected = "endangered_total"
