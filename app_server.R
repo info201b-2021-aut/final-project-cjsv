@@ -3,30 +3,47 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-# Read in Data
-source("scripts/aggregate_table.R")
-source("scripts/summary_info.R")
-source("scripts/chart_1.R")
-source("scripts/chart_2.R")
-source("scripts/chart_3.R")
+# Data 
+park <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 
+# Chart 1 Data 
 
-# Start shinyServer
+# Chart 2 Data 
+
+# Chart 3 Data 
+species_data <- species %>%
+  group_by(park_name) %>%
+  summarize(
+    endangered_total = sum(conservation_status == "Endangered"),
+    concerned_total = sum(conservation_status == "Species of Concern"),
+    threatened_total = sum(conservation_status == "Threatened")
+  )
+
 server <- function(input, output) {
   
-  # Render a plotly object that returns an interactive map
-  output$barchart <- renderPlotly({
-    return(chart_1(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
-  })
+  # Render a plotly object that returns a barchart
+  #output$barchart <- renderPlotly({
+  #  chart_1
+  #})
   
-  # Render a plotly object that returns a bar chart
-  output$chart <- renderPlotly({
-    return(chart_2(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
-  })
+  # Render a plotly object that returns a chart
+  #output$barchart <- renderPlotly({
+  #  chart_2
+  #})
   
-  # Render a plotly object that returns a line chart
+  # Render a plotly object that returns a scatterplot
   output$scatterplot <- renderPlotly({
-    return(chart_3(read.csv("scripts/data/national_parks_biodiversity/species.csv")))
+    
+    chart_3 <- ggplot(data = species_data, aes(x = park_name)) +
+    geom_point(aes_string(y = input$conservation)) +
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+      labs(
+        title = "Species in National Parks",
+        x = "Park Name",
+        y = "Number of Species"
+      )
+    
   })
 }
 
