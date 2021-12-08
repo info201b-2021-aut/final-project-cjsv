@@ -33,15 +33,10 @@ intro <- tabPanel(
 ) 
 
 page_one <- tabPanel(
-<<<<<<< HEAD
-  "Barchart",
-=======
   "chart_1",
->>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
   
   sidebarLayout(
     sidebarPanel(
-      
       category_input <- selectInput(
         inputId = "category",
         label = "Select Category: ",
@@ -66,7 +61,6 @@ page_two <- tabPanel(
   "Unique Orders Chart",
   
   sidebarLayout(
-<<<<<<< HEAD
     sidebarPanel(
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
         It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
@@ -82,17 +76,17 @@ page_two <- tabPanel(
       )
     ),
           
-=======
+
     sidebarPanel(),
->>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
+
     
     mainPanel(
       # Display graph
       
       plotlyOutput("chart")
     )
-    
   )
+
 )
 
 page_three <- tabPanel(
@@ -119,7 +113,7 @@ page_three <- tabPanel(
       )
     ),
   )
-)  
+) 
 
 page_four <- tabPanel(
   "Chart 4",
@@ -143,9 +137,9 @@ page_four <- tabPanel(
       ui <- fluidPage(
         plotlyOutput("map")
       )
-    ),
+    )
   )
-)  
+)
 
 conclusion <- tabPanel(
   "Conclusion",
