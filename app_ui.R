@@ -3,9 +3,13 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 orders <- unique(species$order)
+categories <- unique(species$category)
 
 
 intro <- tabPanel(
@@ -39,16 +43,17 @@ intro <- tabPanel(
 
 page_one <- tabPanel(
   "chart_1",
-  
-  "Barchart",
+
   sidebarLayout(
     sidebarPanel(
       category_input <- selectInput(
-        inputId = "category",
+        inputId = "chosencategory",
         label = "Select Category: ",
-        choice = c("Bird" = "bird", 
-                   "Mammal" = "mammal", 
-                   "Fish" = "fish")
+        choice = c("Birds" = "bird",
+                   "Fish" = "fish",
+                   "Mammals" = "mammal",
+                   "Reptiles" = "reptile",
+                   "Vascular Plants" = "vascular_plant"),
       )
     ),
     

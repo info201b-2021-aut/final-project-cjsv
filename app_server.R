@@ -12,7 +12,7 @@ server <- function(input, output) {
   
   # Render a plotly object that returns a barchart
   output$barchart <- renderPlotly({
-    chart_1(input$category)
+    chart_1(input$chosencategory)
   })
   
   barchart2 <- function(orders){

@@ -28,9 +28,11 @@ num_species_by_category <- species_by_state %>%
 species_by_category <- merge(num_native_species_category, num_species_by_category)
 
 species_by_category <- species_by_category %>%
+  group_by(state) %>%
   mutate(native_species_prop = native_sum / species_sum) %>%
-  mutate(category = tolower(category)) %>%
-  arrange(category)
+  mutate(category = tolower(category))
+
+species_by_category$category <- gsub(" ", "_", species_by_category$category)
 
 bird <- species_by_category %>%
   filter(category == "bird") %>%
@@ -53,7 +55,21 @@ fish <- species_by_category %>%
     fish = native_species_prop
   )
 
-category_data <- merge(merge(bird, mammal),fish)
+reptile <- species_by_category %>%
+  filter(category == "reptile") %>%
+  summarize(
+    state = state,
+    reptile = native_species_prop
+  )
+
+vascular_plant <- species_by_category %>%
+  filter(category == "vascular_plant") %>%
+  summarize(
+    state = state,
+    vascular_plant = native_species_prop
+  )
+
+category_data <- merge(merge(merge(merge(bird, mammal),fish), reptile), vascular_plant)
 
 chart_1 <- function(category_input) {
   barchart <- ggplot(category_data, aes(x = state)) +
@@ -63,7 +79,7 @@ chart_1 <- function(category_input) {
          y = "Percentage of Native Species")
   return(barchart)
 }
-  
+
   
   
       
