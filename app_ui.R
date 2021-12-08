@@ -49,7 +49,11 @@ page_one <- tabPanel(
       category_input <- selectInput(
         inputId = "chosencategory",
         label = "Select Category: ",
-        choice = categories,
+        choice = c("Birds" = "bird",
+                   "Fish" = "fish",
+                   "Mammals" = "mammal",
+                   "Reptiles" = "reptile",
+                   "Vascular Plants" = "vascular_plant"),
       )
     ),
     

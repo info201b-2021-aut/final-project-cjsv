@@ -3,7 +3,6 @@ library(dplyr)
 library(plotly)
 library(patchwork)
 library(shiny)
-categories <- unique(species$category)
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
@@ -29,15 +28,11 @@ num_species_by_category <- species_by_state %>%
 species_by_category <- merge(num_native_species_category, num_species_by_category)
 
 species_by_category <- species_by_category %>%
-  group_by(state)%>%
+  group_by(state) %>%
   mutate(native_species_prop = native_sum / species_sum) %>%
-  arrange(category)
-<<<<<<< HEAD
-  
-chart_1 <- function(categories) {
-  barchart <- ggplot(species_by_category, x = state, y = native_species_prop) +
-    geom_col(mapping = aes(x = state, y = native_species_prop))
-=======
+  mutate(category = tolower(category))
+
+species_by_category$category <- gsub(" ", "_", species_by_category$category)
 
 bird <- species_by_category %>%
   filter(category == "bird") %>%
@@ -60,18 +55,31 @@ fish <- species_by_category %>%
     fish = native_species_prop
   )
 
-category_data <- merge(merge(bird, mammal),fish)
+reptile <- species_by_category %>%
+  filter(category == "reptile") %>%
+  summarize(
+    state = state,
+    reptile = native_species_prop
+  )
+
+vascular_plant <- species_by_category %>%
+  filter(category == "vascular_plant") %>%
+  summarize(
+    state = state,
+    vascular_plant = native_species_prop
+  )
+
+category_data <- merge(merge(merge(merge(bird, mammal),fish), reptile), vascular_plant)
 
 chart_1 <- function(category_input) {
   barchart <- ggplot(category_data, aes(x = state)) +
     geom_col(mapping = aes_string(y = category_input)) +
->>>>>>> 6654a170c4dfaf0d5cac782bae1e5d6a158ce4c5
     labs(title = "Percentage of Native Species by State",
          x = "States",
          y = "Percentage of Native Species")
   return(barchart)
 }
-  
+
   
   
       
