@@ -10,12 +10,11 @@ source("scripts/chart_4.R")
 
 server <- function(input, output) {
   
-  # Render a plotly object that returns a barchart
-  #output$barchart <- renderPlotly({
-  #  chart_1
-  #})
+  #Render a plotly object that returns a barchart
+  output$barchart <- renderPlotly({
+    chart_1
+  })
   
-<<<<<<< HEAD
   # Render a plotly object that returns a bar chart
     
   barchart_2 <- function(orders){
@@ -34,12 +33,6 @@ server <- function(input, output) {
      output$chart <- renderPlotly({
       barchart_2(input$unqorder)
     })
-=======
-  # Render barchart
-  #output$barchart <- renderPlotly({
-  #  chart_2
-  #})
->>>>>>> 468c3b5a43d7078b6698d4053e458940778d2d3a
   
   # Render scatterplot
   output$scatterplot <- renderPlotly({
