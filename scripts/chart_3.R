@@ -22,7 +22,7 @@ chart_3 <- function(conservation_input){
     geom_point(aes_string(y = conservation_input)) +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
     labs(
-      title = "Species in National Parks",
+      title = "Species Conservation Status in National Parks",
       x = "Park Name",
       y = "Number of Species"
       )

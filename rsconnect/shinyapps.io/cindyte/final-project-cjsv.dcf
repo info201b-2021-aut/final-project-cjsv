@@ -5,7 +5,10 @@ account: cindyte
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5286401
-bundleId: 5342819
+bundleId: 5343203
 url: https://cindyte.shinyapps.io/final-project-cjsv/
-when: 1638916367.72338
-lastSyncTime: 1638916367.7234
+when: 1638923951.19308
+lastSyncTime: 1638923951.19316
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|index.html|index.Rmd|README.md
