@@ -15,11 +15,25 @@ server <- function(input, output) {
     chart_1(input$category)
   })
   
-  # Render barchart
-  #output$barchart <- renderPlotly({
-  #  chart_2
-  #})
-  
+  barchart2 <- function(orders){
+    states <- merge(x = parks, y = species, all.x = TRUE)
+    
+    unique_species <- states %>%
+      group_by(state)%>%
+      filter(order == orders)%>%
+      summarize(order_amount = length(order))%>%
+      arrange(desc(order_amount))
+    
+    ggplot(unique_species, aes(x = state, y = order_amount))+
+      geom_bar(stat="identity", fill=alpha("blue", 0.5))+
+      labs(title = "Biodiversity in National Parks Across the United States by Unique Orders", x = "State", y = "Number of Unique Order")
+  }
+      
+ output$chart <- renderPlotly({
+   barchart2(input$unqorder)
+ })
+       
+    
   # Render scatterplot
   output$scatterplot <- renderPlotly({
     chart_3(input$conservation)

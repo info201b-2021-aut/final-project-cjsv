@@ -7,14 +7,11 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-<<<<<<< HEAD
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
           will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills")
-    
-=======
+          likely be calculated using your DPLYR skills"),
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -31,18 +28,13 @@ intro <- tabPanel(
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
->>>>>>> 870da951e78728e89dc4f03618b9e6ae615d3650
     )
   
 ) 
 
 page_one <- tabPanel(
-<<<<<<< HEAD
   "Barchart",
-=======
   "chart_1",
->>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
-  
   sidebarLayout(
     sidebarPanel(
       
@@ -66,7 +58,6 @@ page_two <- tabPanel(
   "Unique Orders Chart",
   
   sidebarLayout(
-<<<<<<< HEAD
     sidebarPanel(
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
         It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
@@ -81,10 +72,6 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
-          
-=======
-    sidebarPanel(),
->>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
     
     mainPanel(
       # Display graph
