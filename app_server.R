@@ -10,11 +10,12 @@ source("scripts/chart_4.R")
 
 server <- function(input, output) {
   
-  # Render a plotly object that returns a barchart
+  # Render barchart
   output$barchart <- renderPlotly({
     chart_1(input$chosencategory)
   })
   
+  # Render barchart
   barchart2 <- function(orders){
     states <- merge(x = parks, y = species, all.x = TRUE)
     
@@ -32,12 +33,7 @@ server <- function(input, output) {
   output$chart <- renderPlotly({
     barchart2(input$unqorder)
   })
- output$chart <- renderPlotly({
-   barchart2(input$unqorder)
-})
-
-       
-    
+ 
   # Render scatterplot
   output$scatterplot <- renderPlotly({
     chart_3(input$conservation)

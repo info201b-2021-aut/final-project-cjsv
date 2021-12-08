@@ -1,3 +1,26 @@
 body {
   background-color: #dfeef5;
 }
+
+.navbar-default{
+  background-color: #b4d8ed;
+}
+
+h1{
+  text-align: justify;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 18px;
+}
+
+h5{
+  text-align: justify;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 12px;
+}
+
+p{
+  text-align: justify;
+  margin: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 12px;
+}

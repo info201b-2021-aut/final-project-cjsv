@@ -9,11 +9,10 @@ species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 orders <- unique(species$order)
-categories <- unique(species$category)
 
 
 intro <- tabPanel(
-  "Introduction",
+  h5("Introduction"),
   mainPanel(
       h1("Introduction"),
       p("As you introduce your small project, you should describe the
@@ -42,13 +41,13 @@ intro <- tabPanel(
 ) 
 
 page_one <- tabPanel(
-  "chart_1",
+  h5("Native Proportion"),
 
   sidebarLayout(
     sidebarPanel(
       category_input <- selectInput(
         inputId = "chosencategory",
-        label = "Select Category: ",
+        label = "Select category: ",
         choice = c("Birds" = "bird",
                    "Fish" = "fish",
                    "Mammals" = "mammal",
@@ -60,7 +59,10 @@ page_one <- tabPanel(
     mainPanel(
       # Display graph
       ui <- fluidPage(
-        plotlyOutput("barchart")
+        plotlyOutput("barchart"),
+        p("The data-driven question we hope to answer from this map is: 
+          ...?"),
+        p("Please explain here")
       )
     )
     
@@ -68,13 +70,13 @@ page_one <- tabPanel(
 )
 
 page_two <- tabPanel(
-  "Unique Orders Chart",
+  h5("Unique Orders"),
   
   sidebarLayout(
     sidebarPanel(
       chart2_input <- selectInput(
         inputId = "unqorder", 
-        label = "Select an order: ",
+        label = "Select order: ",
         choices = orders
       )
     ),
@@ -97,14 +99,14 @@ page_two <- tabPanel(
 )
 
 page_three <- tabPanel(
-  "Chart 3",
+  h5("Conservation in Parks"),
   
   sidebarLayout(
     sidebarPanel(
       
       conservation_input <- selectInput(
         inputId = "conservation",
-        label = "Select a species status:",
+        label = "Select conservation status:",
         choices = list(
           "Endangered Species" = "endangered_total",
           "Threatened Species" = "threatened_total",
@@ -117,23 +119,23 @@ page_three <- tabPanel(
     mainPanel(
       ui <- fluidPage(
         plotlyOutput("scatterplot"),
-        p("Please explain the purpose of this"),
         p("The data-driven question we hope to answer from this map is: 
-          which areas are experiencing biodiversity loss?")
+          which areas are experiencing biodiversity loss?"),
+        p("Please explain the purpose of this")
       )
     ),
   )
 ) 
 
 page_four <- tabPanel(
-  "State Map",
+  h5("Conservation in the U.S."),
   
   sidebarLayout(
     sidebarPanel(
       
       status_input <- selectInput(
         inputId = "status",
-        label = "Select a species status:",
+        label = "Select conservation status:",
         choices = list(
           "Endangered Species" = "endangered",
           "Threatened Species" = "threatened",
@@ -146,40 +148,59 @@ page_four <- tabPanel(
     mainPanel(
       ui <- fluidPage(
         plotlyOutput("map"),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?"),
         p("This map of the U.S. visualizes the number of species that are either 
           endangered, threatened, or are species of concern in each state that
           has a national park. The brighter shade of red indicates that has 
           state has a higher number of species that either endangered, threatened, 
           or of concern, while states with a darker shade of color have less species 
-          in one of these categories. States without national parks are grey."),
-        p("The data-driven question we hope to answer from this map is: 
-          which areas are experiencing biodiversity loss?")
+          in one of these categories. States without national parks are grey.")
       )
     )
   )
 )
 
-conclusion <- tabPanel(
-  "Conclusion",
+takeaways <- tabPanel(
+  h5("Takeaways"),
   mainPanel(
+    h1("Takeaways"),
+    
+    # Maybe do 2 takeways for your chart?"
+    
+    #Chart 1
+    p("- ewrfwrinfwr"),
+    p("- ewrfwrinfwr"),
+    
+    #Chart 2
+    p("- ewrfwrinfwr"),
+    p("- ewrfwrinfwr"),
+    
+    #Chart 3
+    p("- ewrfwrinfwr"),
+    p("- ewrfwrinfwr"),
+    
+    #Chart 4
+    p("- Based on the Conservation in the U.S. map, California has
+      the highest number of species across all three categories of conversation:
+      endangered, threatened, or concerned species"),
+    p("- Based on the Conservation in the U.S. map,
+      there is a higher proportion of species that are of concern."),
+    
     h1("Conclusion"),
-    p("As you introduce your small project, you should describe the
-          variables that you've chosen to analyze. In doing so, make clear
-          which measure(s) of CO2 emission you are focusing on. Then, you
-          will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills")
+    p("qwfcaweqf")
     
   )
   
 )
 
 ui <- navbarPage(
-  title = "Biodiversity Data Exploration",
+  title = h1("Biodiversity Data Exploration"),
   theme = "styles.css",
   intro,
   page_one,
   page_two,
   page_three,
   page_four,
-  conclusion
+  takeaways
 )
