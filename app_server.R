@@ -3,22 +3,19 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-# Read in Data
-source("scripts/aggregate_table.R")
-source("scripts/summary_info.R")
 source("scripts/chart_1.R")
 source("scripts/chart_2.R")
 source("scripts/chart_3.R")
+source("scripts/chart_4.R")
 
-
-# Start shinyServer
 server <- function(input, output) {
   
-  # Render a plotly object that returns an interactive map
-  output$barchart <- renderPlotly({
-    return(chart_1(read.csv("scripts/data/national_parks_biodiversity/parks.csv"), read.csv("scripts/data/national_parks_biodiversity/species.csv")))
-  })
+  # Render a plotly object that returns a barchart
+  #output$barchart <- renderPlotly({
+  #  chart_1
+  #})
   
+<<<<<<< HEAD
   # Render a plotly object that returns a bar chart
     
   barchart_2 <- function(orders){
@@ -37,10 +34,22 @@ server <- function(input, output) {
      output$chart <- renderPlotly({
       barchart_2(input$unqorder)
     })
+=======
+  # Render barchart
+  #output$barchart <- renderPlotly({
+  #  chart_2
+  #})
+>>>>>>> 468c3b5a43d7078b6698d4053e458940778d2d3a
   
-  # Render a plotly object that returns a line chart
+  # Render scatterplot
   output$scatterplot <- renderPlotly({
-    return(chart_3(read.csv("scripts/data/national_parks_biodiversity/species.csv")))
+    chart_3(input$conservation)
   })
+  
+  # Render map
+  output$map <- renderPlotly({
+    chart_4(input$status)
+  })
+  
 }
 
