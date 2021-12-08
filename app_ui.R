@@ -37,12 +37,10 @@ intro <- tabPanel(
 ) 
 
 page_one <- tabPanel(
-<<<<<<< HEAD
   "chart_1",
   
-=======
   "Barchart",
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+
   sidebarLayout(
     sidebarPanel(
       category_input <- selectInput(
@@ -83,14 +81,7 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
-<<<<<<< HEAD
-          
-
-    sidebarPanel(),
-
-    
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+        
     mainPanel(
       # Display graph
       
