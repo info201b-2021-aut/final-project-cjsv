@@ -3,15 +3,51 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+<<<<<<< HEAD
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
+
+=======
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
 orders <- unique(species$order)
+
 
 intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
+
+
+
+      p("As you introduce your small project, you should describe the
+          variables that you've chosen to analyze. In doing so, make clear
+          which measure(s) of CO2 emission you are focusing on. Then, you
+          will share at least 5 relevant values of interest. These will
+          likely be calculated using your DPLYR skills"),
+
+<<<<<<< HEAD
+    
+=======
+=======
+>>>>>>> 773f45cac37cbbe724dea8389b7b42b1ba2c48b4
+>>>>>>> 7d15708f4f047bdf8d463c8ade11bd75501c76d9
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
+>>>>>>> aec354a0ef3c996f03254b72692bfb9ab30ee2d0
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -29,6 +65,10 @@ intro <- tabPanel(
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> aec354a0ef3c996f03254b72692bfb9ab30ee2d0
     )
   
 ) 
@@ -38,6 +78,21 @@ page_one <- tabPanel(
   
   "Barchart",
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+>>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
+>>>>>>> 7d15708f4f047bdf8d463c8ade11bd75501c76d9
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
+>>>>>>> aec354a0ef3c996f03254b72692bfb9ab30ee2d0
   sidebarLayout(
     sidebarPanel(
       category_input <- selectInput(
@@ -65,24 +120,44 @@ page_two <- tabPanel(
   
   sidebarLayout(
     sidebarPanel(
-      p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
-        It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
-        and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
-        doesn't have much pattern. The leading area by a large margin, California, has a reported 400 unique orders, and the
-        reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
-        into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
-        interactive chart can help breakdown the orders that can be found in the different regions."),
       chart2_input <- selectInput(
         inputId = "unqorder", 
         label = "Select an order: ",
         choices = orders
       )
     ),
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+        
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+>>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
+>>>>>>> 7d15708f4f047bdf8d463c8ade11bd75501c76d9
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
+>>>>>>> aec354a0ef3c996f03254b72692bfb9ab30ee2d0
     mainPanel(
       # Display graph
       
-      plotlyOutput("chart")
+      plotlyOutput("chart"),
+      p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
+        It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
+        and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
+        doesn't have much pattern. The leading area by a large margin, California, has a reported 400 unique orders, and the
+        reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
+        into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
+        interactive chart can help breakdown the orders that can be found in the different regions, and it hopes to answer the question
+        of which areas are the most and least biodiverse. ")
     )
   )
 
