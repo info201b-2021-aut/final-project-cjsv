@@ -3,24 +3,20 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> ca5a093ceed4af57966fc59ef62e2901d93939ac
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
-<<<<<<< HEAD
+
 
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
 
 
-=======
->>>>>>> ca5a093ceed4af57966fc59ef62e2901d93939ac
+
 orders <- unique(species$order)
 categories <- unique(species$category)
 
@@ -29,21 +25,8 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-<<<<<<< HEAD
 
 
-=======
->>>>>>> ca5a093ceed4af57966fc59ef62e2901d93939ac
-      p("As you introduce your small project, you should describe the
-          variables that you've chosen to analyze. In doing so, make clear
-          which measure(s) of CO2 emission you are focusing on. Then, you
-          will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills"),
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ca5a093ceed4af57966fc59ef62e2901d93939ac
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -66,12 +49,10 @@ intro <- tabPanel(
 
 page_one <- tabPanel(
   "chart_1",
-<<<<<<< HEAD
+
   
   "Barchart",
 
-=======
->>>>>>> ca5a093ceed4af57966fc59ef62e2901d93939ac
 
   sidebarLayout(
     sidebarPanel(
@@ -126,7 +107,7 @@ page_two <- tabPanel(
 )
 
 page_three <- tabPanel(
-  "Chart 3",
+  "Species Conservation Status",
   
   sidebarLayout(
     sidebarPanel(
