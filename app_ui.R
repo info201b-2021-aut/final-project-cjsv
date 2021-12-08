@@ -48,8 +48,7 @@ page_one <- tabPanel(
         label = "Select Category: ",
         choice = c("Bird" = "bird", 
                    "Mammal" = "mammal", 
-                   "Fish" = "fish", 
-                   "Vascular Plant" = "vascular_plant")
+                   "Fish" = "fish")
       )
     ),
     

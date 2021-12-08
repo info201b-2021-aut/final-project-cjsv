@@ -32,14 +32,36 @@ species_by_category <- species_by_category %>%
   mutate(category = tolower(category)) %>%
   arrange(category)
 
+bird <- species_by_category %>%
+  filter(category == "bird") %>%
+  summarize(
+    state = state, 
+    bird = native_species_prop
+  ) 
 
+mammal <- species_by_category %>%
+  filter(category == "mammal") %>%
+  summarize(
+    state = state, 
+    mammal = native_species_prop
+  )
+
+fish <- species_by_category %>%
+  filter(category == "fish") %>%
+  summarize(
+    state = state, 
+    fish = native_species_prop
+  )
+
+category_data <- merge(merge(bird, mammal),fish)
 
 chart_1 <- function(category_input) {
-  barchart <- ggplot(species_by_category, aes(x = state)) +
+  barchart <- ggplot(category_data, aes(x = state)) +
     geom_col(mapping = aes_string(y = category_input)) +
     labs(title = "Percentage of Native Species by State",
          x = "States",
          y = "Percentage of Native Species")
+  return(barchart)
 }
   
   
