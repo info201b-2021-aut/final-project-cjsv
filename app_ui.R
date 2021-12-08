@@ -33,11 +33,10 @@ intro <- tabPanel(
 ) 
 
 page_one <- tabPanel(
-<<<<<<< HEAD
   "Barchart",
-=======
+
   "chart_1",
->>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
+
   
   sidebarLayout(
     sidebarPanel(
@@ -66,7 +65,6 @@ page_two <- tabPanel(
   "Unique Orders Chart",
   
   sidebarLayout(
-<<<<<<< HEAD
     sidebarPanel(
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
         It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
@@ -82,9 +80,8 @@ page_two <- tabPanel(
       )
     ),
           
-=======
+
     sidebarPanel(),
->>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
     
     mainPanel(
       # Display graph
@@ -141,7 +138,13 @@ page_four <- tabPanel(
     
     mainPanel(
       ui <- fluidPage(
-        plotlyOutput("map")
+        plotlyOutput("map"),
+        p("This map of the U.S. visualizes the number of species that are either 
+          endangered, threatened, or are species of concern in each state that
+          has a national park. The brighter shade of red indicates that has 
+          state has a higher number of species that either endangered, threatened, 
+          or of concern, while states with a darker shade of color have less species 
+          in one of these categories. States without national parks are grey.")
       )
     ),
   )
