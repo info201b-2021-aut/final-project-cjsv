@@ -12,7 +12,6 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
@@ -34,8 +33,6 @@ intro <- tabPanel(
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
-
-
     )
   
 ) 
@@ -77,6 +74,7 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
+
     mainPanel(
       # Display graph
       
