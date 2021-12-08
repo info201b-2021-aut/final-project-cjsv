@@ -3,33 +3,29 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-<<<<<<< HEAD
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
-=======
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+
 orders <- unique(species$order)
 
 intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-<<<<<<< HEAD
 
-=======
->>>>>>> 773f45cac37cbbe724dea8389b7b42b1ba2c48b4
+
+
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
           will share at least 5 relevant values of interest. These will
           likely be calculated using your DPLYR skills"),
-<<<<<<< HEAD
-    
 
-=======
->>>>>>> 773f45cac37cbbe724dea8389b7b42b1ba2c48b4
+    
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -46,10 +42,8 @@ intro <- tabPanel(
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
-<<<<<<< HEAD
 
-=======
->>>>>>> 773f45cac37cbbe724dea8389b7b42b1ba2c48b4
+
     )
   
 ) 
@@ -58,14 +52,7 @@ page_one <- tabPanel(
   "chart_1",
   
   "Barchart",
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
->>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
   sidebarLayout(
     sidebarPanel(
       category_input <- selectInput(
@@ -106,14 +93,7 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
-<<<<<<< HEAD
-        
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
->>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
     mainPanel(
       # Display graph
       
