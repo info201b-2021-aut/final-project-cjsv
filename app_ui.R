@@ -11,6 +11,7 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
+      includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
         one of nine planetary boundaries --biosphere integrity especially 
@@ -25,10 +26,10 @@ intro <- tabPanel(
         solutions to prevent biodiversity from further reducing and 
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
-      img(src = "https://greentumble.com/wp-content/uploads/2016/11/importance-of-national-parks.jpg")
+      img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
     )
   
-)
+) 
 
 page_one <- tabPanel(
   "Chart 1",
@@ -131,7 +132,7 @@ conclusion <- tabPanel(
 )
 
 ui <- navbarPage(
-  "Biodiversity Data Exploration",
+  title = "Biodiversity Data Exploration",
   theme = "styles.css",
   intro,
   page_one,
