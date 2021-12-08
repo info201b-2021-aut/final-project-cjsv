@@ -1,34 +1,56 @@
 library(tidyverse)
 library(dplyr)
-library(ggplot2)
+library(plotly)
 library(patchwork)
 library(shiny)
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 
+# Blank theme
+blank_theme <- theme_bw() +
+  theme(
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.background = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank()
+  )
+
+#join species and parks
 speciesandparks <- left_join(species, parks, by = "park_name")
-  
+
+#find the number of native species by state and category
 species_by_state <- speciesandparks %>%
   group_by(state) %>%
   filter(scientific_name == unique(scientific_name))
-  
-num_native_species <- species_by_state %>%
-  group_by(state) %>%
-  summarise(native_sum = sum((nativeness == "Native")))
-  
-num_species_state <- species_by_state %>%
-  group_by(state) %>%
+
+num_native_species_category <- species_by_state %>%
+  group_by(state, category) %>%
+  summarise(native_sum = sum(nativeness == "Native"))
+
+#total species by category and state
+num_species_by_category <- species_by_state %>%
+  group_by(state, category) %>%
   summarise(species_sum = length(nativeness))
-  
-species_state_table <- merge(num_native_species, num_species_state)
-  
-species_state_table <- species_state_table %>%
+
+#find prop of native species to total species by category
+species_by_category <- merge(num_native_species_category, num_species_by_category)
+
+species_by_category <- species_by_category %>%
   mutate(native_species_prop = native_sum / species_sum)
+
+chart_1 <- function(status_input) {
+  barchart <- ggplot(species_by_category, x = state, y = native_species_prop) +
+    geom_col(mapping = aes(x = state, y = native_species_prop)) +
+    labs(title = "Percentage of Native Species by State",
+         x = "States",
+         y = "Percentage of Native Species")
+}
   
-chart_1 <- ggplot(data = species_state_table) +
-  geom_col(mapping = aes(x = state, y = native_species_prop)) +
-  labs(title = "Percentage of Native Species by State",
-       x = "States",
-       y = "Percentage of Native Species")
+  
+  
       
