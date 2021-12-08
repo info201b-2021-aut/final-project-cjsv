@@ -5,6 +5,7 @@ library(plotly)
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
+orders <- unique(species$order)
 
 intro <- tabPanel(
   h5("Introduction"),
@@ -56,13 +57,23 @@ page_one <- tabPanel(
       ui <- fluidPage(
         plotlyOutput("barchart"),
         p("The data-driven question we hope to answer from this map is: 
-          ...?"),
-        p("Please explain here")
+          what is the status of invasive species in different regions?"),
+        p("This chart shows the percentage of native species by category in 
+        national parks. The parks were grouped together by state. Some states 
+          do not have national parks hence why they are not on the chart. 
+          Additionally, some parks stretch across several states like the Death 
+          Valley National Park which is in both CA and NV. Based on the chart, 
+          the birds category has the highest percentage of native species across 
+          almost all states. Meanwhile, in the fish category, there are many
+          states were the native fish species are very low. Since invasive 
+          species are detrimental to regional ecosystems, it is important to 
+          monitor them to understand the status of our national parks. ")
       )
     )
     
   )
 )
+
 
 page_two <- tabPanel(
   h5("Unique Orders"),
@@ -87,7 +98,7 @@ page_two <- tabPanel(
         reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
         into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
         interactive chart can help breakdown the orders that can be found in the different regions, and it hopes to answer the question
-        of which areas are the most and least biodiverse. ")
+        of which areas are the most and least biodiverse.")
     )
   )
 
@@ -168,8 +179,10 @@ takeaways <- tabPanel(
     # Maybe do 2 takeways for your chart?"
     
     #Chart 1
-    p("- ewrfwrinfwr"),
-    p("- ewrfwrinfwr"),
+    p("- Based on the Native Proportion chart, Minnesota and South Carolina 
+      both have consistently high native percentages across all five categories. "),
+    p("- Based on the Native Proportion chart, Hawaii has native species 
+      percentages below 50% in every category except for fish."),
     
     #Chart 2
     p("- ewrfwrinfwr"),
