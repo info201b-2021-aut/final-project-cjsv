@@ -7,19 +7,6 @@ library(shiny)
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 
-# Blank theme
-blank_theme <- theme_bw() +
-  theme(
-    axis.line = element_blank(),
-    axis.text = element_blank(),
-    axis.ticks = element_blank(),
-    axis.title = element_blank(),
-    plot.background = element_blank(),
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    panel.border = element_blank()
-  )
-
 #join species and parks
 speciesandparks <- left_join(species, parks, by = "park_name")
 
