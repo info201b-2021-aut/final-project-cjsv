@@ -3,16 +3,29 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+orders <- unique(species$order)
+
 intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-      p("As you introduce your small project, you should describe the
-          variables that you've chosen to analyze. In doing so, make clear
-          which measure(s) of CO2 emission you are focusing on. Then, you
-          will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills")
-    
+      p("Our domain of interest is biodiversity conservation. 
+        We are interested in this domain because we humans are exceeding the 
+        one of nine planetary boundaries --biosphere integrity especially 
+        genetic biodiversity. It is urgent for us to find as much as information, 
+        analyze it, and develop solutions to prevent biodiversity from further 
+        reducing and help mitigate the negative impacts."),
+      p("The purpose and importance of this project is to learn more about 
+        the trends of biodiversity. As humans are quickly exceeding one of the 
+        nine planetary boundaries, biosphere integrity 
+        (especially genetic biodiversity), it is urgent for us find information, 
+        analyze it, and understand the trends of biodiversity to develop 
+        solutions to prevent biodiversity from further reducing and 
+        to help mitigate its negative impacts."),
+      p("Questions we want to answer"),
+      img(src = "https://greentumble.com/wp-content/uploads/2016/11/importance-of-national-parks.jpg")
     )
   
 )
@@ -41,25 +54,31 @@ page_two <- tabPanel(
   "Chart 2",
   
   sidebarLayout(
-    sidebarPanel(),
+    sidebarPanel(
+      chart2_input <- selectInput(
+        inputId = "unqorder", 
+        label = "Select an order: ",
+        choices = orders
+      )
+    ),
+          
     
     mainPanel(
       # Display graph
       plotlyOutput("chart")
     )
-    
+  )  
   )
-)
 
 page_three <- tabPanel(
-  "Chart 3",
+  "Scatterplot",
   
   sidebarLayout(
     sidebarPanel(
       
       conservation_input <- selectInput(
         inputId = "conservation",
-        label = "Select a species status:",
+        label = "Select a conservation status:",
         choices = list(
           "Endangered Species" = "endangered_total",
           "Threatened Species" = "threatened_total",
@@ -78,14 +97,14 @@ page_three <- tabPanel(
 )  
 
 page_four <- tabPanel(
-  "Chart 4",
+  "State Map",
   
   sidebarLayout(
     sidebarPanel(
       
       status_input <- selectInput(
         inputId = "status",
-        label = "Select a species status:",
+        label = "Select a conservation status:",
         choices = list(
           "Endangered Species" = "endangered",
           "Threatened Species" = "threatened",
