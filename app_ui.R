@@ -3,24 +3,15 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-<<<<<<< HEAD
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
-=======
-parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
-species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+
 orders <- unique(species$order)
 
 intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-      p("As you introduce your small project, you should describe the
-          variables that you've chosen to analyze. In doing so, make clear
-          which measure(s) of CO2 emission you are focusing on. Then, you
-          will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills"),
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -43,10 +34,7 @@ intro <- tabPanel(
 
 page_one <- tabPanel(
   "Barchart",
-<<<<<<< HEAD
 
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
   sidebarLayout(
     sidebarPanel(
       
@@ -88,10 +76,7 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
-<<<<<<< HEAD
 
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
     mainPanel(
       # Display graph
       
@@ -121,14 +106,17 @@ page_three <- tabPanel(
     
     mainPanel(
       ui <- fluidPage(
-        plotlyOutput("scatterplot")
+        plotlyOutput("scatterplot"),
+        p("Please explain the purpose of this"),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?")
       )
     ),
   )
 )  
 
 page_four <- tabPanel(
-  "Chart 4",
+  "State Map",
   
   sidebarLayout(
     sidebarPanel(
@@ -153,7 +141,9 @@ page_four <- tabPanel(
           has a national park. The brighter shade of red indicates that has 
           state has a higher number of species that either endangered, threatened, 
           or of concern, while states with a darker shade of color have less species 
-          in one of these categories. States without national parks are grey.")
+          in one of these categories. States without national parks are grey."),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?")
       )
     ),
   )
