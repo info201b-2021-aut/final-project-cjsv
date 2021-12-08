@@ -7,14 +7,14 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-<<<<<<< HEAD
+
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
           will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills")
+          likely be calculated using your DPLYR skills"),
     
-=======
+
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -31,7 +31,7 @@ intro <- tabPanel(
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
->>>>>>> 870da951e78728e89dc4f03618b9e6ae615d3650
+
     )
   
 ) 
