@@ -29,9 +29,13 @@ server <- function(input, output) {
       labs(title = "Biodiversity in National Parks Across the United States by Unique Orders", x = "State", y = "Number of Unique Order")
   }
       
+  output$chart <- renderPlotly({
+    barchart2(input$unqorder)
+  })
  output$chart <- renderPlotly({
    barchart2(input$unqorder)
- })
+})
+
        
     
   # Render scatterplot

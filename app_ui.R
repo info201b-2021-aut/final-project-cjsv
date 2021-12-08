@@ -11,6 +11,7 @@ species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stri
 orders <- unique(species$order)
 categories <- unique(species$category)
 
+
 intro <- tabPanel(
   "Introduction",
   mainPanel(
@@ -48,7 +49,7 @@ page_one <- tabPanel(
       category_input <- selectInput(
         inputId = "chosencategory",
         label = "Select Category: ",
-        choice = categories
+        choice = categories,
       )
     ),
     
@@ -67,13 +68,6 @@ page_two <- tabPanel(
   
   sidebarLayout(
     sidebarPanel(
-      p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
-        It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
-        and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
-        doesn't have much pattern. The leading area by a large margin, California, has a reported 400 unique orders, and the
-        reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
-        into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
-        interactive chart can help breakdown the orders that can be found in the different regions."),
       chart2_input <- selectInput(
         inputId = "unqorder", 
         label = "Select an order: ",
@@ -84,7 +78,15 @@ page_two <- tabPanel(
     mainPanel(
       # Display graph
       
-      plotlyOutput("chart")
+      plotlyOutput("chart"),
+      p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
+        It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
+        and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
+        doesn't have much pattern. The leading area by a large margin, California, has a reported 400 unique orders, and the
+        reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
+        into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
+        interactive chart can help breakdown the orders that can be found in the different regions, and it hopes to answer the question
+        of which areas are the most and least biodiverse. ")
     )
   )
 
@@ -110,14 +112,17 @@ page_three <- tabPanel(
     
     mainPanel(
       ui <- fluidPage(
-        plotlyOutput("scatterplot")
+        plotlyOutput("scatterplot"),
+        p("Please explain the purpose of this"),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?")
       )
     ),
   )
 ) 
 
 page_four <- tabPanel(
-  "Chart 4",
+  "State Map",
   
   sidebarLayout(
     sidebarPanel(
@@ -142,7 +147,9 @@ page_four <- tabPanel(
           has a national park. The brighter shade of red indicates that has 
           state has a higher number of species that either endangered, threatened, 
           or of concern, while states with a darker shade of color have less species 
-          in one of these categories. States without national parks are grey.")
+          in one of these categories. States without national parks are grey."),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?")
       )
     )
   )
