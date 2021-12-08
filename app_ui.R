@@ -7,15 +7,34 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
+<<<<<<< HEAD
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
           will share at least 5 relevant values of interest. These will
           likely be calculated using your DPLYR skills")
     
+=======
+      includeCSS("styles.css"),
+      p("Our domain of interest is biodiversity conservation. 
+        We are interested in this domain because we humans are exceeding the 
+        one of nine planetary boundaries --biosphere integrity especially 
+        genetic biodiversity. It is urgent for us to find as much as information, 
+        analyze it, and develop solutions to prevent biodiversity from further 
+        reducing and help mitigate the negative impacts."),
+      p("The purpose and importance of this project is to learn more about 
+        the trends of biodiversity. As humans are quickly exceeding one of the 
+        nine planetary boundaries, biosphere integrity 
+        (especially genetic biodiversity), it is urgent for us find information, 
+        analyze it, and understand the trends of biodiversity to develop 
+        solutions to prevent biodiversity from further reducing and 
+        to help mitigate its negative impacts."),
+      p("Questions we want to answer"),
+      img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
+>>>>>>> 870da951e78728e89dc4f03618b9e6ae615d3650
     )
   
-)
+) 
 
 page_one <- tabPanel(
   "chart_1",
@@ -120,7 +139,7 @@ conclusion <- tabPanel(
 )
 
 ui <- navbarPage(
-  "Biodiversity Data Exploration",
+  title = "Biodiversity Data Exploration",
   theme = "styles.css",
   intro,
   page_one,
