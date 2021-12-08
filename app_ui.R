@@ -3,14 +3,13 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-<<<<<<< HEAD
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
-=======
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
 orders <- unique(species$order)
+categories <- unique(species$category)
 
 intro <- tabPanel(
   "Introduction",
@@ -43,25 +42,13 @@ intro <- tabPanel(
 
 page_one <- tabPanel(
   "chart_1",
-  
-  "Barchart",
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
->>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
   sidebarLayout(
     sidebarPanel(
       category_input <- selectInput(
-        inputId = "category",
+        inputId = "chosencategory",
         label = "Select Category: ",
-        choice = c("Bird" = "bird", 
-                   "Mammal" = "mammal", 
-                   "Fish" = "fish", 
-                   "Vascular Plant" = "vascular_plant")
+        choice = categories
       )
     ),
     
@@ -93,14 +80,7 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
-<<<<<<< HEAD
-        
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
->>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
     mainPanel(
       # Display graph
       

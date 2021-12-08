@@ -3,6 +3,7 @@ library(dplyr)
 library(plotly)
 library(patchwork)
 library(shiny)
+categories <- unique(species$category)
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
@@ -28,15 +29,13 @@ num_species_by_category <- species_by_state %>%
 species_by_category <- merge(num_native_species_category, num_species_by_category)
 
 species_by_category <- species_by_category %>%
+  group_by(state)%>%
   mutate(native_species_prop = native_sum / species_sum) %>%
-  mutate(category = tolower(category)) %>%
   arrange(category)
-
-
-
-chart_1 <- function(category_input) {
-  barchart <- ggplot(species_by_category, aes(x = state)) +
-    geom_col(mapping = aes_string(y = category_input)) +
+  
+chart_1 <- function(categories) {
+  barchart <- ggplot(species_by_category, x = state, y = native_species_prop) +
+    geom_col(mapping = aes(x = state, y = native_species_prop))
     labs(title = "Percentage of Native Species by State",
          x = "States",
          y = "Percentage of Native Species")
