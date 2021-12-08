@@ -3,10 +3,6 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
-species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
-orders <- unique(species$order)
-
 intro <- tabPanel(
   "Introduction",
   mainPanel(
@@ -37,14 +33,18 @@ intro <- tabPanel(
 ) 
 
 page_one <- tabPanel(
+  "Barchart",
 <<<<<<< HEAD
   "chart_1",
-  
 =======
-  "Barchart",
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+
+  "chart_1",
+
+  
+>>>>>>> f24654399ff192d3c76e0e1b6b41a39c80d68641
   sidebarLayout(
     sidebarPanel(
+      
       category_input <- selectInput(
         inputId = "category",
         label = "Select Category: ",
@@ -84,20 +84,19 @@ page_two <- tabPanel(
       )
     ),
 <<<<<<< HEAD
+=======
           
 
     sidebarPanel(),
-
+>>>>>>> f24654399ff192d3c76e0e1b6b41a39c80d68641
     
-=======
->>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
     mainPanel(
       # Display graph
       
       plotlyOutput("chart")
     )
+    
   )
-
 )
 
 page_three <- tabPanel(
@@ -124,7 +123,7 @@ page_three <- tabPanel(
       )
     ),
   )
-) 
+)  
 
 page_four <- tabPanel(
   "Chart 4",
@@ -154,9 +153,9 @@ page_four <- tabPanel(
           or of concern, while states with a darker shade of color have less species 
           in one of these categories. States without national parks are grey.")
       )
-    )
+    ),
   )
-)
+)  
 
 conclusion <- tabPanel(
   "Conclusion",
