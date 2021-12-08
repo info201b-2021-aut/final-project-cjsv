@@ -43,9 +43,9 @@ species_by_category <- merge(num_native_species_category, num_species_by_categor
 species_by_category <- species_by_category %>%
   mutate(native_species_prop = native_sum / species_sum)
 
-chart_1 <- function(status_input) {
-  barchart <- ggplot(species_by_category, x = state, y = native_species_prop) +
-    geom_col(mapping = aes(x = state, y = native_species_prop)) +
+chart_1 <- function(category_input) {
+  barchart <- ggplot(species_by_category, aes(x = state)) +
+    geom_col(mapping = aes_string(y = category_input)) +
     labs(title = "Percentage of Native Species by State",
          x = "States",
          y = "Percentage of Native Species")
