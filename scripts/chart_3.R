@@ -20,7 +20,9 @@ species_data <- species %>%
 chart_3 <- function(conservation_input){
   graph <- ggplot(data = species_data, aes(x = park_name, color = park_name)) +
     geom_point(aes_string(y = conservation_input)) +
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 5), legend.text=element_text(size=5),
+          
+          legend.spacing.x = unit(0.5, 'cm')) +
     labs(
       title = "Species Conservation Status in National Parks",
       x = "Park Name",
