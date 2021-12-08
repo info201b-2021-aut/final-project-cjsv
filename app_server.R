@@ -31,7 +31,7 @@ server <- function(input, output) {
       
  output$chart <- renderPlotly({
    barchart2(input$unqorder)
- })
+})
        
     
   # Render scatterplot
