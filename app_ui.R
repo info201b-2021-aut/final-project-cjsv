@@ -3,13 +3,8 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
-species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
-
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
-orders <- unique(species$order)
-
 
 intro <- tabPanel(
   h5("Introduction"),
@@ -121,7 +116,11 @@ page_three <- tabPanel(
         plotlyOutput("scatterplot"),
         p("The data-driven question we hope to answer from this map is: 
           which areas are experiencing biodiversity loss?"),
-        p("Please explain the purpose of this")
+        p("This scatterplot describes either the number of endangered species, threatened species, 
+          or species of concerns in each national park. On the plot, each dot with different colors
+          represents various national parks. It is suggested that the number of endangered species
+          ranges from 0-44, the number of threatened species ranges from 0-16, and the number of species
+          of concern ranges from 21-177 in each national park."),
       )
     ),
   )
