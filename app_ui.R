@@ -18,14 +18,20 @@ intro <- tabPanel(
 )
 
 page_one <- tabPanel(
-  "Chart 1",
+  "Percentage of Native Species",
   
   sidebarLayout(
-    sidebarPanel(),
+    sidebarPanel(
+      category_input <- sidebarInput(
+        InputID = "category",
+        label = "Category",
+        choice = c("Bird", "Mammal", "Fish", "Vascular Plant")
+      )
+    ),
     
     mainPanel(
       # Display graph
-      plotlyOutput("barchart")
+      plotlyOutput(outPutId = "barchart")
     )
     
   )
