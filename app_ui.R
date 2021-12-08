@@ -7,14 +7,11 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
-<<<<<<< HEAD
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
           will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills")
-    
-=======
+          likely be calculated using your DPLYR skills"),
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -31,41 +28,67 @@ intro <- tabPanel(
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
->>>>>>> 870da951e78728e89dc4f03618b9e6ae615d3650
     )
   
 ) 
 
 page_one <- tabPanel(
+<<<<<<< HEAD
+  "Barchart",
+=======
   "chart_1",
+>>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
   
   sidebarLayout(
     sidebarPanel(
       
-      
       category_input <- selectInput(
         inputId = "category",
-        label = "Select Category",
-        choice = c("Bird", "Mammal", "Fish", "Vascular Plant")
+        label = "Select Category: ",
+        choice = c("Bird" = "bird", 
+                   "Mammal" = "mammal", 
+                   "Fish" = "fish", 
+                   "Vascular Plant" = "vascular_plant")
       )
     ),
     
     mainPanel(
       # Display graph
-      plotlyOutput("barchart")
+      ui <- fluidPage(
+        plotlyOutput("barchart")
+      )
     )
     
   )
 )
 
 page_two <- tabPanel(
-  "Chart 2",
+  "Unique Orders Chart",
   
   sidebarLayout(
+<<<<<<< HEAD
+    sidebarPanel(
+      p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
+        It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
+        and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
+        doesn't have much pattern. The leading area by a large margin, California, has a reported 400 unique orders, and the
+        reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
+        into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
+        interactive chart can help breakdown the orders that can be found in the different regions."),
+      chart2_input <- selectInput(
+        inputId = "unqorder", 
+        label = "Select an order: ",
+        choices = orders
+      )
+    ),
+          
+=======
     sidebarPanel(),
+>>>>>>> bd5cf6d5d2bf52a3d2be1c969335de94e9ce9174
     
     mainPanel(
       # Display graph
+      
       plotlyOutput("chart")
     )
     
