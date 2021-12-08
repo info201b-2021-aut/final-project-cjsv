@@ -3,6 +3,10 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+orders <- unique(species$order)
+
 intro <- tabPanel(
   "Introduction",
   mainPanel(
@@ -34,14 +38,7 @@ intro <- tabPanel(
 
 page_one <- tabPanel(
   "Barchart",
-<<<<<<< HEAD
-  "chart_1",
-=======
 
-  "chart_1",
-
-  
->>>>>>> f24654399ff192d3c76e0e1b6b41a39c80d68641
   sidebarLayout(
     sidebarPanel(
       
@@ -83,13 +80,7 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
-<<<<<<< HEAD
-=======
-          
 
-    sidebarPanel(),
->>>>>>> f24654399ff192d3c76e0e1b6b41a39c80d68641
-    
     mainPanel(
       # Display graph
       
