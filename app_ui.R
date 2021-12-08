@@ -3,8 +3,19 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+<<<<<<< HEAD
+
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
+
+=======
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
 orders <- unique(species$order)
 
 
@@ -12,11 +23,28 @@ intro <- tabPanel(
   "Introduction",
   mainPanel(
       h1("Introduction"),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
+
+
+
       p("As you introduce your small project, you should describe the
           variables that you've chosen to analyze. In doing so, make clear
           which measure(s) of CO2 emission you are focusing on. Then, you
           will share at least 5 relevant values of interest. These will
           likely be calculated using your DPLYR skills"),
+
+<<<<<<< HEAD
+    
+=======
+=======
+>>>>>>> 773f45cac37cbbe724dea8389b7b42b1ba2c48b4
+>>>>>>> 7d15708f4f047bdf8d463c8ade11bd75501c76d9
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -33,15 +61,31 @@ intro <- tabPanel(
         to help mitigate its negative impacts."),
       p("Questions we want to answer"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
+
+
     )
   
 ) 
 
 page_one <- tabPanel(
+  "chart_1",
+  
   "Barchart",
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+>>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
+>>>>>>> 7d15708f4f047bdf8d463c8ade11bd75501c76d9
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
   sidebarLayout(
     sidebarPanel(
-      
       category_input <- selectInput(
         inputId = "category",
         label = "Select Category: ",
@@ -73,6 +117,22 @@ page_two <- tabPanel(
         choices = orders
       )
     ),
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+        
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1108c276fdbf2f7a2898b274ea91bccf5d6836dc
+>>>>>>> 0b85bcb96ac7f793ce9f55e471f299ab0d267ac4
+>>>>>>> 7d15708f4f047bdf8d463c8ade11bd75501c76d9
+>>>>>>> 45275afed93d9e972a1f961134fe642297e69e80
     mainPanel(
       # Display graph
       
@@ -86,8 +146,8 @@ page_two <- tabPanel(
         interactive chart can help breakdown the orders that can be found in the different regions, and it hopes to answer the question
         of which areas are the most and least biodiverse. ")
     )
-    
   )
+
 )
 
 page_three <- tabPanel(
@@ -110,14 +170,17 @@ page_three <- tabPanel(
     
     mainPanel(
       ui <- fluidPage(
-        plotlyOutput("scatterplot")
+        plotlyOutput("scatterplot"),
+        p("Please explain the purpose of this"),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?")
       )
     ),
   )
-)  
+) 
 
 page_four <- tabPanel(
-  "Chart 4",
+  "State Map",
   
   sidebarLayout(
     sidebarPanel(
@@ -142,11 +205,13 @@ page_four <- tabPanel(
           has a national park. The brighter shade of red indicates that has 
           state has a higher number of species that either endangered, threatened, 
           or of concern, while states with a darker shade of color have less species 
-          in one of these categories. States without national parks are grey.")
+          in one of these categories. States without national parks are grey."),
+        p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?")
       )
-    ),
+    )
   )
-)  
+)
 
 conclusion <- tabPanel(
   "Conclusion",

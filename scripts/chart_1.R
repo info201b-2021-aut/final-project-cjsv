@@ -28,7 +28,11 @@ num_species_by_category <- species_by_state %>%
 species_by_category <- merge(num_native_species_category, num_species_by_category)
 
 species_by_category <- species_by_category %>%
-  mutate(native_species_prop = native_sum / species_sum)
+  mutate(native_species_prop = native_sum / species_sum) %>%
+  mutate(category = tolower(category)) %>%
+  arrange(category)
+
+
 
 chart_1 <- function(category_input) {
   barchart <- ggplot(species_by_category, aes(x = state)) +
