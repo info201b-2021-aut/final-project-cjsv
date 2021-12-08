@@ -3,6 +3,10 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+orders <- unique(species$order)
+
 intro <- tabPanel(
   "Introduction",
   mainPanel(
@@ -35,15 +39,21 @@ page_two <- tabPanel(
   "Chart 2",
   
   sidebarLayout(
-    sidebarPanel(),
+    sidebarPanel(
+      chart2_input <- selectInput(
+        inputId = "unqorder", 
+        label = "Select an order: ",
+        choices = orders
+      )
+    ),
+          
     
     mainPanel(
       # Display graph
       plotlyOutput("chart")
     )
-    
+  )  
   )
-)
 
 page_three <- tabPanel(
   "Chart 3",
