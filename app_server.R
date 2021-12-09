@@ -27,7 +27,7 @@ server <- function(input, output) {
     
     ggplot(unique_species, aes(x = state, y = order_amount))+
       geom_bar(stat="identity", fill=alpha("blue", 0.5))+
-      labs(title = "Biodiversity in National Parks Across the United States by Unique Orders", x = "State", y = "Number of Unique Order")
+      labs(title = "Biodiversity in U.S. National Parks by Unique Orders", x = "State", y = "Number of Unique Order")
   }
       
   output$chart <- renderPlotly({
