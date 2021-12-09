@@ -52,15 +52,7 @@ intro <- tabPanel(
 ) 
 
 page_one <- tabPanel(
-
-  "chart_1",
-
-  
-  "Barchart",
-
-
   h5("Native Proportion"),
-
 
   sidebarLayout(
     sidebarPanel(
