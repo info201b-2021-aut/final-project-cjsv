@@ -185,7 +185,6 @@ takeaways <- tabPanel(
       of observered animals nearly every time. "),
     p("- From the unique orders chart, we can see there are many orders like Myxosporidia (a certain bacteria) and Synbranchiformes (an eel-like fish)
       that have only been observed at one national park."),
-<<<<<<< HEAD
     
 
     #Chart 2
@@ -193,7 +192,7 @@ takeaways <- tabPanel(
     p("- ewrfwrinfwr"),
     
     #Chart 3
-=======
+
 
     # Chart 3
     p("- The data-driven question we hope to answer from this map is: 
@@ -203,7 +202,7 @@ takeaways <- tabPanel(
           represents various national parks. It is suggested that the number of endangered species
           ranges from 0-44, the number of threatened species ranges from 0-16, and the number of species
           of concern ranges from 21-177 in each national park."),
->>>>>>> a6373240e6c9b37471323bd95eb8ef9b96a0a8d7
+
     p("-The Species Conservation Status scatterplot suggests that Hawaii Volcanoes
       Park has the highest number of endangered species while Denali National
       park, Gates of the Arctic National Park, Glacier National Park, Great Sand Dunes
@@ -212,11 +211,7 @@ takeaways <- tabPanel(
       species and species of concern"),
     p("- There are generally under ten endangered species, one to five threatened species,
       twenty to a hundred species of concern in each national park."),
-<<<<<<< HEAD
-    
-=======
->>>>>>> a6373240e6c9b37471323bd95eb8ef9b96a0a8d7
-    
+
     # Chart 4
     p("- Based on the Conservation in the U.S. map, California has
       the highest number of species across all three categories of conversation:
