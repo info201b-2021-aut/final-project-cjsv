@@ -21,10 +21,14 @@ intro <- tabPanel(
         increase awareness and develop solutions to prevent biodiversity from further 
         decreasing and to help mitigate the negative impacts."),
       
-      h1("Questions we want to answer:"),
+      h1("The major questions we want to answer are:"),
       p("- What is the status of invasive species in different regions of the U.S.?"),
       p("- Which areas in the U.S. have the most and least biodiversity?"),
       p("- What areas in the U.S. are experiencing biodiversity loss?"),
+      p("The data we will use to answer these questions is National Park Service's
+        Biodiversity in National Parks dataset. The National Park Service species 
+        list database is managed and updated by staff at individual national parks 
+        and the systemwide Inventory and Monitoring department."),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
     )
   
