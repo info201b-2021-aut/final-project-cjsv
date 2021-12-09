@@ -18,8 +18,8 @@ intro <- tabPanel(
         nine planetary boundaries, biosphere integrity (especially 
         genetic biodiversity). Therefore, the purpose of this project is to learn
         more about the trends of biodiversity in order to
-        develop solutions to prevent biodiversity from further 
-        decreasing and help mitigate the negative impacts."),
+        increase awareness and develop solutions to prevent biodiversity from further 
+        decreasing and to help mitigate the negative impacts."),
       
       h1("Questions we want to answer:"),
       p("- What is the status of invasive species in different regions of the U.S.?"),
@@ -37,7 +37,7 @@ page_one <- tabPanel(
     sidebarPanel(
       category_input <- selectInput(
         inputId = "chosencategory",
-        label = "Select category: ",
+        label = "Select category of species: ",
         choice = c("Birds" = "bird",
                    "Fish" = "fish",
                    "Mammals" = "mammal",
@@ -82,8 +82,6 @@ page_two <- tabPanel(
     ),
 
     mainPanel(
-      # Display graph
-      
       plotlyOutput("chart"),
       p("The data-driven question we hope to answer from this graph is: Which areas in the U.S. have the most and least biodiversity?"),
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
@@ -158,7 +156,7 @@ page_four <- tabPanel(
           which areas are experiencing biodiversity loss?"),
         p("This map of the U.S. visualizes the number of species that are either 
           endangered, threatened, or are species of concern in each state that
-          has a national park. The brighter shade of red indicates that has 
+          has a national park. The brighter shade of red indicates that the 
           state has a higher number of species that either endangered, threatened, 
           or of concern, while states with a darker shade of color have less species 
           in one of these categories. States without national parks are grey.")

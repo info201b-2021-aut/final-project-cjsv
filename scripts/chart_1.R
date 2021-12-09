@@ -29,7 +29,7 @@ species_by_category <- merge(num_native_species_category, num_species_by_categor
 
 species_by_category <- species_by_category %>%
   group_by(state) %>%
-  mutate(native_species_prop = native_sum / species_sum) %>%
+  mutate(native_species_prop = round((native_sum / species_sum)*100), digits = 0) %>%
   mutate(category = tolower(category))
 
 species_by_category$category <- gsub(" ", "_", species_by_category$category)
