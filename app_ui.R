@@ -114,6 +114,7 @@ page_two <- tabPanel(
       # Display graph
       
       plotlyOutput("chart"),
+      p("The data-driven question we hope to answer from this map is: Which areas in the U.S. have the most and least biodiversity?"),
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
         It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
         and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
@@ -212,8 +213,10 @@ takeaways <- tabPanel(
       percentages below 50% in every category except for fish."),
     
     #Chart 2
-    p("- ewrfwrinfwr"),
-    p("- ewrfwrinfwr"),
+    p("- Browsing through the different unique orders, we can see from the chart that California consistently has some of the highest numbers
+      of observered animals nearly every time. "),
+    p("- From the unique orders chart, we can see there are many orders like Myxosporidia (a certain bacteria) and Synbranchiformes (an eel-like fish)
+      that have only been observed at one national park."),
     
     #Chart 3
     p("- ewrfwrinfwr"),
