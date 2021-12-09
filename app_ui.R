@@ -5,6 +5,11 @@ library(plotly)
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
+orders <- unique(species$order)
+source("scripts/chart_1.R")
+source("scripts/chart_2.R")
+source("scripts/chart_3.R")
+source("scripts/chart_4.R")
 
 intro <- tabPanel(
   h5("Introduction"),
