@@ -2,6 +2,7 @@ library(dplyr)
 library(ggplot2)
 library(patchwork)
 library(shiny)
+library(mapproj)
 library(maps)
 library("openintro")
 
