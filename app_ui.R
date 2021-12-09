@@ -207,7 +207,7 @@ takeaways <- tabPanel(
     # Conclusion
     h1("Conclusion"),
     p("Based on our examinations across national parks and states, 
-    it is evident that biodiversity loss is happening, which is why we should take immediate action 
+    it is evident that biodiversity loss is present therefore, we must take immediate action 
       to conserve species and prevent biodiversity from further decreasing.")
     
   )
