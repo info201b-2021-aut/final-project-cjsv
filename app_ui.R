@@ -3,23 +3,6 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-
-parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
-species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
-
-parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
-species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
-
-
-
-parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
-species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
-
-
-
-orders <- unique(species$order)
-categories <- unique(species$category)
-
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 orders <- unique(species$order)
@@ -27,24 +10,21 @@ orders <- unique(species$order)
 intro <- tabPanel(
   h5("Introduction"),
   mainPanel(
-      h1("Introduction"),
-
-
       includeCSS("styles.css"),
+      
+      h1("Introduction"),
       p("Our domain of interest is biodiversity conservation. 
-        We are interested in this domain because we humans are exceeding the 
-        one of nine planetary boundaries --biosphere integrity especially 
-        genetic biodiversity. It is urgent for us to find as much as information, 
-        analyze it, and develop solutions to prevent biodiversity from further 
-        reducing and help mitigate the negative impacts."),
-      p("The purpose and importance of this project is to learn more about 
-        the trends of biodiversity. As humans are quickly exceeding one of the 
-        nine planetary boundaries, biosphere integrity 
-        (especially genetic biodiversity), it is urgent for us find information, 
-        analyze it, and understand the trends of biodiversity to develop 
-        solutions to prevent biodiversity from further reducing and 
-        to help mitigate its negative impacts."),
-      p("Questions we want to answer"),
+        We are interested in this domain because we humans are exceeding one of the 
+        nine planetary boundaries, biosphere integrity (especially 
+        genetic biodiversity). Therefore, the purpose of this project is to learn
+        more about the trends of biodiversity in order to
+        develop solutions to prevent biodiversity from further 
+        decreasing and help mitigate the negative impacts."),
+      
+      h1("Questions we want to answer:"),
+      p("- What is the status of invasive species in different regions of the U.S.?"),
+      p("- Which areas in the U.S. have the most and least biodiversity?"),
+      p("- What areas in the U.S. are experiencing biodiversity loss?"),
       img(src = "https://media.tehrantimes.com/d/t/2020/10/13/3/3578658.jpg")
     )
   
@@ -105,7 +85,7 @@ page_two <- tabPanel(
       # Display graph
       
       plotlyOutput("chart"),
-      p("The data-driven question we hope to answer from this map is: Which areas in the U.S. have the most and least biodiversity?"),
+      p("The data-driven question we hope to answer from this graph is: Which areas in the U.S. have the most and least biodiversity?"),
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
         It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
         and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
@@ -121,10 +101,7 @@ page_two <- tabPanel(
 
 page_three <- tabPanel(
 
-  "Species Conservation Status",
-
   h5("Conservation in Parks"),
-
   
   sidebarLayout(
     sidebarPanel(
@@ -195,33 +172,39 @@ takeaways <- tabPanel(
   mainPanel(
     h1("Takeaways"),
     
-    # Maybe do 2 takeways for your chart?"
-    
-    #Chart 1
+    # Chart 1
     p("- Based on the Native Proportion chart, Minnesota and South Carolina 
       both have consistently high native percentages across all five categories. "),
     p("- Based on the Native Proportion chart, Hawaii has native species 
       percentages below 50% in every category except for fish."),
     
-    #Chart 2
+    # Chart 2
     p("- Browsing through the different unique orders, we can see from the chart that California consistently has some of the highest numbers
       of observered animals nearly every time. "),
     p("- From the unique orders chart, we can see there are many orders like Myxosporidia (a certain bacteria) and Synbranchiformes (an eel-like fish)
       that have only been observed at one national park."),
     
-    #Chart 3
-    p("- ewrfwrinfwr"),
-    p("- ewrfwrinfwr"),
+    # Chart 3
+    p("The data-driven question we hope to answer from this map is: 
+          which areas are experiencing biodiversity loss?"),
+    p("This scatterplot describes either the number of endangered species, threatened species, 
+          or species of concerns in each national park. On the plot, each dot with different colors
+          represents various national parks. It is suggested that the number of endangered species
+          ranges from 0-44, the number of threatened species ranges from 0-16, and the number of species
+          of concern ranges from 21-177 in each national park."),
     
-    #Chart 4
+    # Chart 4
     p("- Based on the Conservation in the U.S. map, California has
       the highest number of species across all three categories of conversation:
       endangered, threatened, or concerned species"),
     p("- Based on the Conservation in the U.S. map,
       there is a higher proportion of species that are of concern."),
     
+    # Conclusion
     h1("Conclusion"),
-    p("qwfcaweqf")
+    p("Based on our findings, it is evident that biodiversity is being
+      impacted negatively, which is why we should take action 
+      to preserve biodiversity.")
     
   )
   

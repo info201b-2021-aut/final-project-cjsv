@@ -57,7 +57,7 @@ chart_4 <- function(status_input) {
     coord_map() +
     scale_fill_continuous(low = "#132B43", high = "Red", na.value = "grey90") +
     labs(fill = paste0("Total of species ", status_input),
-         title = "Species Conservation Status in National Parks") +
+         title = "U.S. Species Conservation Status") +
     blank_theme
   return(map)
 }
