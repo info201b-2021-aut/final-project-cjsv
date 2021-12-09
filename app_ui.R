@@ -3,23 +3,33 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
+
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
+
+
+
+parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv")
+species <- read.csv("scripts/data/national_parks_biodiversity/species.csv")
+
+
+
+orders <- unique(species$order)
+categories <- unique(species$category)
+
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
 species <- read.csv("scripts/data/national_parks_biodiversity/species.csv", stringsAsFactors = FALSE)
 orders <- unique(species$order)
-source("scripts/chart_1.R")
-source("scripts/chart_2.R")
-source("scripts/chart_3.R")
-source("scripts/chart_4.R")
 
 intro <- tabPanel(
   h5("Introduction"),
   mainPanel(
       h1("Introduction"),
-      p("As you introduce your small project, you should describe the
-          variables that you've chosen to analyze. In doing so, make clear
-          which measure(s) of CO2 emission you are focusing on. Then, you
-          will share at least 5 relevant values of interest. These will
-          likely be calculated using your DPLYR skills"),
+
+
       includeCSS("styles.css"),
       p("Our domain of interest is biodiversity conservation. 
         We are interested in this domain because we humans are exceeding the 
@@ -61,13 +71,23 @@ page_one <- tabPanel(
       ui <- fluidPage(
         plotlyOutput("barchart"),
         p("The data-driven question we hope to answer from this map is: 
-          ...?"),
-        p("Please explain here")
+          what is the status of invasive species in different regions?"),
+        p("This chart shows the percentage of native species by category in 
+        national parks. The parks were grouped together by state. Some states 
+          do not have national parks hence why they are not on the chart. 
+          Additionally, some parks stretch across several states like the Death 
+          Valley National Park which is in both CA and NV. Based on the chart, 
+          the birds category has the highest percentage of native species across 
+          almost all states. Meanwhile, in the fish category, there are many
+          states were the native fish species are very low. Since invasive 
+          species are detrimental to regional ecosystems, it is important to 
+          monitor them to understand the status of our national parks. ")
       )
     )
     
   )
 )
+
 
 page_two <- tabPanel(
   h5("Unique Orders"),
@@ -85,6 +105,7 @@ page_two <- tabPanel(
       # Display graph
       
       plotlyOutput("chart"),
+      p("The data-driven question we hope to answer from this map is: Which areas in the U.S. have the most and least biodiversity?"),
       p("This chart gives a visualization of the level of biodiversity in different national parks across the U.S. 
         It was made using the number of unique orders (Carnivora, Rodentia, etc.) in each reported National Park, 
         and then grouping them together by state. From this chart, we can see that the distribution of biodiversity is varied and 
@@ -92,14 +113,18 @@ page_two <- tabPanel(
         reported state with the least biodiversity, New Mexico, has 72 unique orders in its national parks. This gives us insight 
         into the amount and state of national parks in the different regions, including the amount of reported orders. Here, this 
         interactive chart can help breakdown the orders that can be found in the different regions, and it hopes to answer the question
-        of which areas are the most and least biodiverse. ")
+        of which areas are the most and least biodiverse.")
     )
   )
 
 )
 
 page_three <- tabPanel(
+
+  "Species Conservation Status",
+
   h5("Conservation in Parks"),
+
   
   sidebarLayout(
     sidebarPanel(
@@ -173,12 +198,16 @@ takeaways <- tabPanel(
     # Maybe do 2 takeways for your chart?"
     
     #Chart 1
-    p("- ewrfwrinfwr"),
-    p("- ewrfwrinfwr"),
+    p("- Based on the Native Proportion chart, Minnesota and South Carolina 
+      both have consistently high native percentages across all five categories. "),
+    p("- Based on the Native Proportion chart, Hawaii has native species 
+      percentages below 50% in every category except for fish."),
     
     #Chart 2
-    p("- ewrfwrinfwr"),
-    p("- ewrfwrinfwr"),
+    p("- Browsing through the different unique orders, we can see from the chart that California consistently has some of the highest numbers
+      of observered animals nearly every time. "),
+    p("- From the unique orders chart, we can see there are many orders like Myxosporidia (a certain bacteria) and Synbranchiformes (an eel-like fish)
+      that have only been observed at one national park."),
     
     #Chart 3
     p("- ewrfwrinfwr"),

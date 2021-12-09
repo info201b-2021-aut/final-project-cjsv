@@ -76,7 +76,7 @@ chart_1 <- function(category_input) {
     geom_col(mapping = aes_string(y = category_input)) +
     labs(title = "Percentage of Native Species by State",
          x = "States",
-         y = "Percentage of Native Species")
+         y = "Percentage of Native Species in National Parks")
   return(barchart)
 }
 
