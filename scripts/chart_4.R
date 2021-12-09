@@ -2,6 +2,7 @@ library(dplyr)
 library(ggplot2)
 library(patchwork)
 library(shiny)
+library(maps)
 library("openintro")
 
 parks <- read.csv("scripts/data/national_parks_biodiversity/parks.csv", stringsAsFactors = FALSE)
